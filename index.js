@@ -11,7 +11,7 @@ var data = {
     "subType": "uinfin",
     "actionType": "checkin",
     "sub": "S9960846C",
-    "venueId": "STG2-SAFE-ENTRY-SELF-TEST-SINGLE",
+    "venueId": "STG-180000001W-83338-SEQRSELFTESTSINGLE-SE",
     "mobileno": "92376345"
 };
 
@@ -20,9 +20,9 @@ var data = {
 //     "subType": "uinfin",
 //     "actionType": "checkin",
 //     "sub": "S9960846C",
-//     "venueId": "STG2-SAFE-ENTRY-SELF-TEST",
+//     "venueId": "STG-180000001W-409531-SEQRSELFTESTMULTIPLE-SE",
 //     "mobileno": "92376345",
-//     "tenantId": "ohlala"
+//     "tenantId": "VENUE1"
 // };
 
 
@@ -36,9 +36,9 @@ if (apiType == "entry") {
 
     api.callEntry(data, config)
         .then(result => {
-            console.log(result);
+            console.log("Success! \nBody:");
         })
         .catch(error => {
-            console.log(error);
+            console.log("Error! \nBody:",error);
         });
 }

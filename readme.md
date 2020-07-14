@@ -54,14 +54,15 @@ Sample data:
     "subType": "uinfin",
     "actionType": "checkin",
     "sub": "S9960846C",
-    "venueId": "STG2-SAFE-ENTRY-SELF-TEST-SINGLE",
+    "venueId": "STG-180000001W-83338-SEQRSELFTESTSINGLE-SE",
     "mobileno": "92376345"
 }
 ```
 
 Response:
 ```
-{ statusCode: 201, msg: '' }
+Http status code: 201
+Body: <empty>
 ```
 
 **Fail - Missing field**
@@ -71,14 +72,15 @@ Sample data:
 {
     "actionType": "checkin",
     "sub": "S9960846C",
-    "venueId": "STG2-SAFE-ENTRY-SELF-TEST-SINGLE",
+    "venueId": "STG-180000001W-83338-SEQRSELFTESTSINGLE-SE",
     "mobileno": "92376345"
 }
 ```
 
 Response:
 ```
-{ statusCode: 400, msg: '{"code":400,"message":"[\\"Missing subType\\"]"}' }
+Http status code: 400
+Body: {"code":400,"message":"Invalid subType"}
 ```
 
 
@@ -90,14 +92,15 @@ Sample data:
     "subType": "test",
     "actionType": "checkin",
     "sub": "S9960846C",
-    "venueId": "STG2-SAFE-ENTRY-SELF-TEST-SINGLE",
+    "venueId": "STG-180000001W-83338-SEQRSELFTESTSINGLE-SE",
     "mobileno": "92376345"
 }
 ```
 
 Response:
 ```
-{ statusCode: 400, msg: '{"code":400,"message":"[\\"Invalid subType\\"]"}' }
+Http status code: 400
+Body: {"code":400,"message":"Invalid subType"}
 ```
 
 
@@ -116,7 +119,8 @@ Sample data:
 
 Response:
 ```
-{ statusCode: 400, msg: '{"code":400,"message":"Invalid venue"}' }
+Http status code: 400
+Body: {"code":400,"message":"Invalid venue"}
 ```
 
 
@@ -128,14 +132,15 @@ Sample data:
     "subType": "uinfin",
     "actionType": "checkin",
     "sub": "test",
-    "venueId": "STG2-SAFE-ENTRY-SELF-TEST-SINGLE",
+    "venueId": "STG-180000001W-83338-SEQRSELFTESTSINGLE-SE",
     "mobileno": "92376345"
 }
 ```
 
 Response:
 ```
-{ statusCode: 400, msg: '{"code":400,"message":"Invalid uinfin"}' }
+Http status code: 400
+Body: {"code":400,"message":"Invalid uinfin"}
 ```
 
 
@@ -147,14 +152,15 @@ Sample data:
     "subType": "uinfin",
     "actionType": "checkin",
     "sub": "S9960846C",
-    "venueId": "STG2-SAFE-ENTRY-SELF-TEST-SINGLE",
+    "venueId": "STG-180000001W-83338-SEQRSELFTESTSINGLE-SE",
     "mobileno": "test"
 }
 ```
 
 Response:
 ```
-{ statusCode: 400, msg: '{"code":400,"message":"[\\"Invalid mobileno\\"]"}' }
+Http status code: 400
+Body: {"code":400,"message":"Invalid mobileno"}
 ```
 
 #### Multiple tenant SafeEntry QR app
@@ -167,15 +173,16 @@ Sample data:
     "subType": "uinfin",
     "actionType": "checkin",
     "sub": "S9960846C",
-    "venueId": "STG2-SAFE-ENTRY-SELF-TEST",
+    "venueId": "STG-180000001W-409531-SEQRSELFTESTMULTIPLE-SE",
     "mobileno": "92376345",
-    "tenantId": "ohlala"
+    "tenantId": "VENUE1"
 }
 ```
 
 Response:
 ```
-{ statusCode: 201, msg: '' }
+Http status code: 201
+Body: <empty>
 ```
 
 
@@ -187,12 +194,13 @@ Sample data:
     "subType": "uinfin",
     "actionType": "checkin",
     "sub": "S9960846C",
-    "venueId": "STG2-SAFE-ENTRY-SELF-TEST",
-    "mobileno": "92376345",
+    "venueId": "STG-180000001W-409531-SEQRSELFTESTMULTIPLE-SE",
+    "mobileno": "92376345"
 }
 ```
 
 Response:
 ```
-{ statusCode: 400, msg: '{"code":400,"message":"Missing tenantId"}' }
+Http status code: 400
+Body: {"code":400,"message":"Missing tenantId"}
 ```
