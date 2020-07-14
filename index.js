@@ -2,18 +2,30 @@ var api = require('./lib/api.js');
 var config = require('./config.js');
 
 // Testing data - START //
-var seQrInfoUrl = "https://staging.safeentry-qr.gov.sg/login/STG2-SAFE-ENTRY-SELF-TEST";
+/* NOTE 
+* venueId is the unique id of the SafeEntry QR venue used to checkin/checkout
+*/
 
-var lat = 1.275424514596223;
-var long = 103.7993860244751;
-
+// Staging - Example for Single checkin
 var data = {
     "subType": "uinfin",
     "actionType": "checkin",
-    "sub": "S9812381D",
+    "sub": "S9960846C",
     "venueId": "STG2-SAFE-ENTRY-SELF-TEST-SINGLE",
-    "mobileno": "12345678"
+    "mobileno": "92376345"
 };
+
+// Staging - Example for Multiple checkin
+// var data = {
+//     "subType": "uinfin",
+//     "actionType": "checkin",
+//     "sub": "S9960846C",
+//     "venueId": "STG2-SAFE-ENTRY-SELF-TEST",
+//     "mobileno": "92376345",
+//     "tenantId": "ohlala"
+// };
+
+
 
 // Testing data - END //
 

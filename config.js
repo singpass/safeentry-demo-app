@@ -1,18 +1,18 @@
 var config = {};
 
 config.test = {
-    appId: "STG2-MYINFO-SELF-TEST",
+    appId: "STG2-SEQR-SELF-TEST",
     privateKeyPath: "./cert/stg-myinfo-2018.pem",
     publicCertPath: "./cert/pub.stg.consent.myinfo.gov.sg.cer"
 };
 
 /* PRODUCTION
-    Please replace "XXX" with your own credentials
+    Please replace "XXX" with necessary credentials
 */
 // config.production = {
 //     appId: "XXX",
 //     privateKeyPath: "XXX",
-//     publicCertPath: "./cert/pub.consent.myinfo.gov.sg.cer"
+//     publicCertPath: "XXX"
 // };
 
 module.exports = config;
