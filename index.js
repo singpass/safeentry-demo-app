@@ -6,7 +6,7 @@ var config = require('./config.js');
 * venueId is the unique id of the SafeEntry QR venue used to checkin/checkout
 */
 
-// Staging - Example for Single checkin
+// Staging - Example for Venue with no destination configured
 var data = {
     "subType": "uinfin",
     "actionType": "checkin",
@@ -15,7 +15,7 @@ var data = {
     "mobileno": "92376345"
 };
 
-// Staging - Example for Multiple checkin
+// Staging - Example for Venue with multiple destinations (e.g. Lobby, Swimming Pool, Restaurant)
 // var data = {
 //     "subType": "uinfin",
 //     "actionType": "checkin",

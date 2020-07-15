@@ -204,3 +204,23 @@ Response:
 Http status code: 400
 Body: {"code":400,"message":"Missing tenantId"}
 ```
+
+**Fail - Invalid tenantId. TenantId does not exist in SafeEntry QR app**
+
+Sample data:
+```
+{
+    "subType": "uinfin",
+    "actionType": "checkin",
+    "sub": "S9960846C",
+    "venueId": "STG-180000001W-409531-SEQRSELFTESTMULTIPLE-SE",
+    "mobileno": "92376345"
+    "tenantId": "test"
+}
+```
+
+Response:
+```
+Http status code: 400
+Body: {"code":400,"message":"Invalid tenantId"}
+```
