@@ -1,55 +1,89 @@
+<p align="center">
+<a href="https://www.ndi-api.gov.sg/safeentry">
+  <img width="150" src="https://www.ndi-api.gov.sg/assets/img/safe-entry/SafeEntry_logo_inline.png">
+  </a>
+</p>
+
 # Safe Entry Demo App
+
 
 This is a demo application meant to illustrate how to integrate your application with Safe Entry
 
-## Safe Entry Demo App Setup
 
-### 1.1 Install Node and NPM
+## Contents
 
-In order for the demo application to run, you will need to install Node and NPM.
+- [1. Quick Start](#quick-start)
+- [2. How To Use](#how-to-use)
+- [3. Enable Payload Encryption & PKI Digital Signature](#pki)
+- [4. Possible scenarios](#possible-scenarios)
+    - [4.1. Single tenant SafeEntry QR app](#possible-scenarios-single)
+    - [4.2. Multiple tenants SafeEntry QR app](#possible-scenarios-multiple)
+
+<br/>
+
+
+
+## <a name="quick-start"></a>1. Quick Start
+
+### 1.1 Install Node and NPM (_skip this step if you have NPM installed_)
+
+For the demo application to run, you will need to install Node and NPM.
 
 Follow the instructions given by the links below depending on your OS.
 
 - [Install Node and NPM for Windows](http://blog.teamtreehouse.com/install-node-js-npm-windows)
 - [Install Node and NPM for Linux](http://blog.teamtreehouse.com/install-node-js-npm-linux)
-- [nstall Node and NPM for Mac](http://blog.teamtreehouse.com/install-node-js-npm-mac)
+- [Install Node and NPM for Mac](http://blog.teamtreehouse.com/install-node-js-npm-mac)
 
 
 ### 1.2 Run NPM install
 
 Run the following command in the folder you unzipped the application:
+
 ```
 npm install
 ```
 
-## To call Safe Entry API
+### 1.3 Start the Application
 
-API input parameters can be changed in:
-```
-index.js
-```
-
-AppId and Cert path can be changed in:
-```
-config.js
-```
-
-
-### 2.1 Entry
-
-Run the following command in the folder you unzipped the application:
+Execute the following command to call the Entry API:
 ```
 npm run entry
 ```
 
-### Possible scenarios:
 
-### Single tenant SafeEntry QR app
+## <a name="how-to-use"></a>2. How To Use
 
-**Success**
+You are allowed to change the following configurations in the files below: 
 
-Sample data:
-```
+| File |Configs|
+|---|---|
+|`index.js`| Sample checkin or checkout data |
+|`config.js`| Application ID (AppId) and certificates|
+
+
+
+
+## <a name="pki"></a>3. Enable Payload Encryption & PKI Digital Signature
+
+To enable payload encryption and signing. 
+
+`WIP`
+
+
+## <a name="possible-scenarios"></a>4. Possible scenarios
+
+### <a name="possible-scenarios-single"></a>4.1 Single tenant SafeEntry QR app
+
+<table>
+  <tr>
+    <th>Scenarios</th>
+    <th>Sample data</th>   
+    <th>Response (Body)</th>
+  </tr>
+  <tr>
+    <td>Success</td>
+    <td><pre lang="json">
 {
     "subType": "uinfin",
     "actionType": "checkin",
@@ -57,37 +91,30 @@ Sample data:
     "venueId": "STG-180000001W-83338-SEQRSELFTESTSINGLE-SE",
     "mobileno": "92376345"
 }
-```
-
-Response:
-```
-Http status code: 201
-Body: <empty>
-```
-
-**Fail - Missing field**
-
-Sample data:
-```
+    </pre></td>
+    <td>
+    Http status code: <span style="color:green">201</span></br>
+    Body: < empty >
+    </td>
+  </tr>
+  <tr>
+    <td>Fail - Missing field</td>
+    <td><pre lang="json">
 {
     "actionType": "checkin",
     "sub": "S9960846C",
     "venueId": "STG-180000001W-83338-SEQRSELFTESTSINGLE-SE",
     "mobileno": "92376345"
 }
-```
-
-Response:
-```
-Http status code: 400
-Body: {"code":400,"message":"Invalid subType"}
-```
-
-
-**Fail - Invalid sub type. Only allow "uinfin" or "others"**
-
-Sample data:
-```
+    </pre></td>  
+    <td>
+    Http status code: <span style="color:red">400</span></br>
+    Body: {"code":400,"message":"Missing subType"}
+    </td>
+  </tr>
+  <tr>
+    <td>Fail - Invalid sub type. Only allow "uinfin" or "others</td>
+    <td><pre lang="json">
 {
     "subType": "test",
     "actionType": "checkin",
@@ -95,19 +122,15 @@ Sample data:
     "venueId": "STG-180000001W-83338-SEQRSELFTESTSINGLE-SE",
     "mobileno": "92376345"
 }
-```
-
-Response:
-```
-Http status code: 400
-Body: {"code":400,"message":"Invalid subType"}
-```
-
-
-**Fail - Invalid venue**
-
-Sample data:
-```
+    </pre></td>  
+    <td>
+    Http status code: <span style="color:red">400</span></br>
+    Body: {"code":400,"message":"Invalid subType"}
+    </td>
+  </tr>
+  <tr>
+    <td>Fail - Invalid venue</td>
+    <td><pre lang="json">
 {
     "subType": "uinfin",
     "actionType": "checkin",
@@ -115,19 +138,15 @@ Sample data:
     "venueId": "test",
     "mobileno": "92376345"
 }
-```
-
-Response:
-```
-Http status code: 400
-Body: {"code":400,"message":"Invalid venue"}
-```
-
-
-**Fail - Invalid uinfin**
-
-Sample data:
-```
+    </pre></td>  
+    <td>
+    Http status code: <span style="color:red">400</span></br>
+    Body: {"code":400,"message":"Invalid venue"}
+    </td>
+  </tr>  
+  <tr>
+    <td>Fail - Invalid uinfin</td>
+    <td><pre lang="json">
 {
     "subType": "uinfin",
     "actionType": "checkin",
@@ -135,19 +154,15 @@ Sample data:
     "venueId": "STG-180000001W-83338-SEQRSELFTESTSINGLE-SE",
     "mobileno": "92376345"
 }
-```
-
-Response:
-```
-Http status code: 400
-Body: {"code":400,"message":"Invalid uinfin"}
-```
-
-
-**Fail - Invalid mobileno**
-
-Sample data:
-```
+    </pre></td>  
+    <td>
+    Http status code: <span style="color:red">400</span></br>
+    Body: {"code":400,"message":"Invalid uinfin"}
+    </td>
+  </tr>   
+  <tr>
+    <td>Fail - Invalid mobileno</td>
+    <td><pre lang="json">
 {
     "subType": "uinfin",
     "actionType": "checkin",
@@ -155,20 +170,28 @@ Sample data:
     "venueId": "STG-180000001W-83338-SEQRSELFTESTSINGLE-SE",
     "mobileno": "test"
 }
-```
+    </pre></td>  
+    <td>
+    Http status code: <span style="color:red">400</span></br>
+    Body: {"code":400,"message":"Invalid mobileno"}
+    </td>
+  </tr>   
+</table>
 
-Response:
-```
-Http status code: 400
-Body: {"code":400,"message":"Invalid mobileno"}
-```
 
-#### Multiple tenant SafeEntry QR app
 
-**Success**
+### <a name="possible-scenarios-multiple"></a>4.2 Multiple tenants SafeEntry QR app
 
-Sample data:
-```
+
+<table>
+  <tr>
+    <th>Scenarios</th>
+    <th>Sample data</th>   
+    <th>Response (Body)</th>
+  </tr>
+  <tr>
+    <td>Success</td>
+    <td><pre lang="json">
 {
     "subType": "uinfin",
     "actionType": "checkin",
@@ -177,19 +200,15 @@ Sample data:
     "mobileno": "92376345",
     "tenantId": "VENUE1"
 }
-```
-
-Response:
-```
-Http status code: 201
-Body: <empty>
-```
-
-
-**Fail - Missing tenantId. TenantId is mandatory for Multiple tenant SafeEntry QR app**
-
-Sample data:
-```
+    </pre></td>
+    <td>
+    Http status code: <span style="color:green">201</span></br>
+    Body: < empty >
+    </td>
+  </tr>
+  <tr>
+    <td>Fail - Missing tenantId. TenantId is mandatory for Multiple tenant SafeEntry QR app</td>
+    <td><pre lang="json">
 {
     "subType": "uinfin",
     "actionType": "checkin",
@@ -197,18 +216,15 @@ Sample data:
     "venueId": "STG-180000001W-409531-SEQRSELFTESTMULTIPLE-SE",
     "mobileno": "92376345"
 }
-```
-
-Response:
-```
-Http status code: 400
-Body: {"code":400,"message":"Missing tenantId"}
-```
-
-**Fail - Invalid tenantId. TenantId does not exist in SafeEntry QR app**
-
-Sample data:
-```
+    </pre></td>  
+    <td>
+    Http status code: <span style="color:red">400</span></br>
+    Body: {"code":400,"message":"Missing tenantId"}
+    </td>
+  </tr>   
+  <tr>
+    <td>Fail - Invalid tenantId. TenantId does not exist in SafeEntry QR app</td>
+    <td><pre lang="json">
 {
     "subType": "uinfin",
     "actionType": "checkin",
@@ -217,10 +233,14 @@ Sample data:
     "mobileno": "92376345"
     "tenantId": "test"
 }
-```
+    </pre></td>  
+    <td>
+    Http status code: <span style="color:red">400</span></br>
+    Body: {"code":400,"message":"Invalid tenantId"}
+    </td>
+  </tr>     
+</table>
 
-Response:
-```
-Http status code: 400
-Body: {"code":400,"message":"Invalid tenantId"}
-```
+## Reporting Issue
+
+You may contact our [support](mailto:support@myinfo.gov.sg?subject=[SafeEntry]%20Sample%20App) for any other technical issues, and we will respond to you within 5 working days.
