@@ -93,7 +93,7 @@ To enable payload encryption and signing.
 }
     </pre></td>
     <td>
-    Http status code: <span style="color:green">201</span></br>
+    Http status code: <div class="text-green">201</div></br>
     Body: < empty >
     </td>
   </tr>
@@ -108,7 +108,7 @@ To enable payload encryption and signing.
 }
     </pre></td>  
     <td>
-    Http status code: <span style="color:red">400</span></br>
+    Http status code: <div class="text-red">400</div></br>
     Body: {"code":400,"message":"Missing subType"}
     </td>
   </tr>
@@ -124,7 +124,7 @@ To enable payload encryption and signing.
 }
     </pre></td>  
     <td>
-    Http status code: <span style="color:red">400</span></br>
+    Http status code: <div class="text-red">400</div></br>
     Body: {"code":400,"message":"Invalid subType"}
     </td>
   </tr>
@@ -140,7 +140,7 @@ To enable payload encryption and signing.
 }
     </pre></td>  
     <td>
-    Http status code: <span style="color:red">400</span></br>
+    Http status code: <div class="text-red">400</div></br>
     Body: {"code":400,"message":"Invalid venue"}
     </td>
   </tr>  
@@ -156,7 +156,7 @@ To enable payload encryption and signing.
 }
     </pre></td>  
     <td>
-    Http status code: <span style="color:red">400</span></br>
+    Http status code: <div class="text-red">400</div></br>
     Body: {"code":400,"message":"Invalid uinfin"}
     </td>
   </tr>   
@@ -172,7 +172,7 @@ To enable payload encryption and signing.
 }
     </pre></td>  
     <td>
-    Http status code: <span style="color:red">400</span></br>
+    Http status code: <div class="text-red">400</div></br>
     Body: {"code":400,"message":"Invalid mobileno"}
     </td>
   </tr>   
@@ -202,7 +202,7 @@ To enable payload encryption and signing.
 }
     </pre></td>
     <td>
-    Http status code: <span style="color:green">201</span></br>
+    Http status code: <div class="text-green">201</div></br>
     Body: < empty >
     </td>
   </tr>
@@ -218,7 +218,7 @@ To enable payload encryption and signing.
 }
     </pre></td>  
     <td>
-    Http status code: <span style="color:red">400</span></br>
+    Http status code: <div class="text-red">400</div></br>
     Body: {"code":400,"message":"Missing tenantId"}
     </td>
   </tr>   
@@ -235,7 +235,7 @@ To enable payload encryption and signing.
 }
     </pre></td>  
     <td>
-    Http status code: <span style="color:red">400</span></br>
+    Http status code: <div class="text-red">400</div></br>
     Body: {"code":400,"message":"Invalid tenantId"}
     </td>
   </tr>     
