@@ -77,12 +77,13 @@ To enable payload encryption and signing.
 
 <table>
   <tr>
-    <th>Scenarios</th>
     <th>Sample data</th>   
     <th>Response (Body)</th>
   </tr>
   <tr>
-    <td>Success</td>
+    <td colspan="2">Success</td>
+    </tr>
+    <tr>
     <td><pre lang="json">
 {
     "subType": "uinfin",
@@ -98,7 +99,9 @@ To enable payload encryption and signing.
     </td>
   </tr>
   <tr>
-    <td>Fail - Missing field</td>
+    <td colspan="2">Fail - Missing field</td>
+    </tr>
+    <tr>
     <td><pre lang="json">
 {
     "actionType": "checkin",
@@ -113,7 +116,9 @@ To enable payload encryption and signing.
     </td>
   </tr>
   <tr>
-    <td>Fail - Invalid sub type. Only allow "uinfin" or "others</td>
+    <td colspan="2">Fail - Invalid sub type. Only allow "uinfin" or "others</td>
+    </tr>
+    <tr>
     <td><pre lang="json">
 {
     "subType": "test",
@@ -129,7 +134,9 @@ To enable payload encryption and signing.
     </td>
   </tr>
   <tr>
-    <td>Fail - Invalid venue</td>
+    <td colspan="2">Fail - Invalid venue</td>
+    </tr>
+    <tr>
     <td><pre lang="json">
 {
     "subType": "uinfin",
@@ -145,7 +152,9 @@ To enable payload encryption and signing.
     </td>
   </tr>  
   <tr>
-    <td>Fail - Invalid uinfin</td>
+    <td colspan="2">Fail - Invalid uinfin</td>
+    </tr>
+    <tr>
     <td><pre lang="json">
 {
     "subType": "uinfin",
@@ -161,7 +170,9 @@ To enable payload encryption and signing.
     </td>
   </tr>   
   <tr>
-    <td>Fail - Invalid mobileno</td>
+    <td colspan="2">Fail - Invalid mobileno</td>
+    </tr>
+    <tr>
     <td><pre lang="json">
 {
     "subType": "uinfin",
@@ -185,12 +196,13 @@ To enable payload encryption and signing.
 
 <table>
   <tr>
-    <th>Scenarios</th>
     <th>Sample data</th>   
     <th>Response (Body)</th>
   </tr>
   <tr>
-    <td>Success</td>
+    <td colspan="2">Success</td>
+    </tr>
+    <tr>
     <td><pre lang="json">
 {
     "subType": "uinfin",
@@ -207,7 +219,9 @@ To enable payload encryption and signing.
     </td>
   </tr>
   <tr>
-    <td>Fail - Missing tenantId. TenantId is mandatory for Multiple tenant SafeEntry QR app</td>
+    <td colspan="2">Fail - Missing tenantId. TenantId is mandatory for Multiple tenant SafeEntry QR app</td>
+    </tr>
+    <tr>
     <td><pre lang="json">
 {
     "subType": "uinfin",
@@ -223,7 +237,9 @@ To enable payload encryption and signing.
     </td>
   </tr>   
   <tr>
-    <td>Fail - Invalid tenantId. TenantId does not exist in SafeEntry QR app</td>
+    <td colspan="2">Fail - Invalid tenantId. TenantId does not exist in SafeEntry QR app</td>
+    </tr>
+    <tr>
     <td><pre lang="json">
 {
     "subType": "uinfin",
