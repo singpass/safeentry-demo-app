@@ -14,10 +14,9 @@ This is a demo application meant to illustrate how to integrate your application
 
 - [1. Quick Start](#quick-start)
 - [2. How To Use](#how-to-use)
-- [3. Enable Payload Encryption & PKI Digital Signature](#pki)
-- [4. Possible scenarios](#possible-scenarios)
-    - [4.1. Single tenant SafeEntry QR app](#possible-scenarios-single)
-    - [4.2. Multiple tenants SafeEntry QR app](#possible-scenarios-multiple)
+- [3. Possible scenarios](#possible-scenarios)
+    - [3.1. Single tenant SafeEntry QR app](#possible-scenarios-single)
+    - [3.2. Multiple tenants SafeEntry QR app](#possible-scenarios-multiple)
 
 <br/>
 
@@ -47,10 +46,16 @@ npm install
 ### 1.3 Start the Application
 
 Execute the following command to call the Entry API:
+
+To test with payload encryption and signing. 
 ```
 npm run entry
 ```
 
+To test without payload encryption and signing. 
+```
+npm run entry-sandbox
+```
 
 ## <a name="how-to-use"></a>2. How To Use
 
@@ -63,17 +68,9 @@ You are allowed to change the following configurations in the files below:
 
 
 
+## <a name="possible-scenarios"></a>3. Possible scenarios
 
-## <a name="pki"></a>3. Enable Payload Encryption & PKI Digital Signature
-
-To enable payload encryption and signing. 
-
-`WIP`
-
-
-## <a name="possible-scenarios"></a>4. Possible scenarios
-
-### <a name="possible-scenarios-single"></a>4.1 Single tenant SafeEntry QR app
+### <a name="possible-scenarios-single"></a>3.1 Single tenant SafeEntry QR app
 
 <table>
   <tr>
@@ -191,7 +188,7 @@ To enable payload encryption and signing.
 
 
 
-### <a name="possible-scenarios-multiple"></a>4.2 Multiple tenants SafeEntry QR app
+### <a name="possible-scenarios-multiple"></a>3.2 Multiple tenants SafeEntry QR app
 
 
 <table>
